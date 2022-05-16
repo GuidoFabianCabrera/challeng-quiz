@@ -90,6 +90,8 @@ const MetamaskProvider = ({ children }) => {
         .submit(1, quizAnswers)
         .send({ from: selectedAccount });
 
+      setHasCooldownContract(false);
+
       getOwnBalance();
     } catch (error) {
       console.log('error', error);

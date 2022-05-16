@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '15px',
   },
   title: {
-    marginBottom: '0',
+    marginBottom: '10px',
   },
   image: {
     display: 'block',
@@ -89,12 +89,19 @@ const Home = () => {
           </Grid>
         )}
         {selectedAccount && hasCooldownContract && cooldownContractMinutes && (
-          <Grid item>
-            <Typography variant="h6">
-              You must wait {cooldownContractMinutes} minutes to complete the
-              survey again
-            </Typography>
-          </Grid>
+          <>
+            <Grid item>
+              <Typography variant="h4" className={classes.title}>
+                Completed questionnaire
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Typography variant="h6">
+                You must wait {cooldownContractMinutes} minutes to complete the
+                survey again
+              </Typography>
+            </Grid>
+          </>
         )}
         {selectedAccount && hasCooldownContract && !cooldownContractMinutes && (
           <>
